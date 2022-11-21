@@ -7,14 +7,13 @@ phases:
 
   pre_build:
     commands:
-      - yum install -y yum-utils
-      - yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
-      - ls /etc/yum.repos.d/      
-      - yum install terraform -y
-      - terraform --version
+      - yum install wget unzip
+      - wget https://releases.hashicorp.com/terraform/0.12.2/terraform_0.12.2_linux_amd64.zip
+      - unzip ./terraform_0.12.2_linux_amd64.zip -d /usr/local/bin      
+      - terraform -v
       
 
   build:
     commands:
       - terraform init
-      - terraform plan
+#       - terraform plan
