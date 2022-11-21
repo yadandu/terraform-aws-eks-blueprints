@@ -13,12 +13,12 @@ phases:
      
       - sudo apt update && sudo apt install terraform
       
-	    - terraform version
+      - terraform version
       
 
   build:
     commands:
       - terraform init
       - terraform validate
-	    - terraform plan
+      - terraform plan
    
